@@ -4,6 +4,8 @@ import { useForm, FormProvider } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { cn } from "@/lib/utils"
 
+import { SiGoogle } from "react-icons/si"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -58,12 +60,8 @@ export function SignInForm({ className, ...props }: React.ComponentProps<"div">)
               </span>
             </div>
 
-            <Button
-              variant="outline"
-              className="w-full"
-              onClick={() => console.log("Вхід через Google")}
-            >
-              Увійти через Google
+            <Button variant="outline" className="w-full">
+              <SiGoogle/> Увійти через Google
             </Button>
           </div>
 

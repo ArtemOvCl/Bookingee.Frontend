@@ -56,7 +56,7 @@ export function SignUpForm({ className, ...props }: React.ComponentProps<"div">)
                 {(field) => <Input placeholder="m@example.com" {...field} />}
               </FormInputField>
 
-              <FormInputField control={form.control} name="password" label="Пароль">
+              <FormInputField control={form.control} name="password" label="Пароль" isCustomError>
                 {(field) => <PasswordInput value={field.value} onChange={field.onChange} />}
               </FormInputField>
 

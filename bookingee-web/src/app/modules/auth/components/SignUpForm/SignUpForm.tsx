@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { FormInputField } from "@/app/modules/shared/components/FormField/FormField"
+import { PasswordInput } from "@/app/modules/shared/components/PasswordInput/PasswordInput"
 
 export function SignUpForm({ className, ...props }: React.ComponentProps<"div">) {
   const form = useForm<SignupInput>({
@@ -52,11 +53,11 @@ export function SignUpForm({ className, ...props }: React.ComponentProps<"div">)
               </FormInputField>
 
               <FormInputField control={form.control} name="email" label="Email">
-                {(field) => <Input type="email" placeholder="m@example.com" {...field} />}
+                {(field) => <Input placeholder="m@example.com" {...field} />}
               </FormInputField>
 
               <FormInputField control={form.control} name="password" label="Пароль">
-                {(field) => <Input type="password" placeholder="••••••" {...field} />}
+                {(field) => <PasswordInput value={field.value} onChange={field.onChange} />}
               </FormInputField>
 
               <FormInputField control={form.control} name="confirmPassword" label="Підтвердження паролю">
@@ -83,7 +84,7 @@ export function SignUpForm({ className, ...props }: React.ComponentProps<"div">)
 
           <div className="text-center text-sm mt-4">
             Уже є акаунт?{" "}
-            <a href="/auth/login" className="underline underline-offset-4">
+            <a href="/auth/sign_in" className="underline underline-offset-4">
               Увійти
             </a>
           </div>
